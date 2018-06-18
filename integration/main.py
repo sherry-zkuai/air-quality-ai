@@ -36,7 +36,6 @@ def load(city):
 		
 		return trained_model
 
-@app.route("/info", methods=['POST', 'GET'])
 def get_info():
 	city = request.form['city']	
 	res = load(city)
@@ -49,7 +48,6 @@ def get_info():
 	</body>
 	</html>""")
 	
-@app.route("/", methods=['GET', 'POST'])
 def welcome():
 	return render_template('select.html')
 
