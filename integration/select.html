@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <head>
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <style>
+            
+        .googleMap{
+            width: 70%;
+            height: 500px;
+        }
+            
+        body{
+            background-image: url("https://images7.alphacoders.com/713/713678.jpg");
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100vw 100vw;
+            margin: 0;
+        }
+        
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            margin: 0;
+        }
+        
+        li{
+            float: left;
+            padding: 40px;
+            color: white;
+        }
+        
+        li a{
+            color:white;
+            font-family: 'Lora', serif;
+            font-size: 25px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        text{
+            color:white;
+            font-family: 'Lora', serif;
+            font-size: 15px;
+        }
+        
+        li:hover {
+            background-color: #267492;
+        }
+        
+        .description{
+            margin: auto;
+            width: 600px;
+            text-align: center;
+            font-size: 20px;
+            font-family:'Permanent Marker', cursive;
+            color: white;
+        }
+        
+        .filter{
+            background-color: rgba(67, 90, 108, 0.6);
+            height: 100%;
+            margin:0;
+            padding: ;
+        }
+        </style>
+        <script>
+            function myMap(){
+                var mapProp = {
+                    center: new google.maps.LatLng(0,0)
+                    zoom: 1.4,
+                    minZoom: 1
+                };
+                
+                var map = new google.maps.Map(document.getElementById ("googleMap"), mapProp);
+            }
+        </script>
+        </head>
+        <ul>
+            <li> <a href="home.html">Home</a></li>
+            <li> <a href="aboutus.html">About us</a></li>
+            <li> <a href="select.html">Select City</a></li>
+            <li> <a href="contact.html">Contact Us</a></li>
+        </ul>
+    
+        <div class = "description">
+            <h2> Select your city</h2>
+            
+            <div id = "googleMap"></div>
+            
+            <br>
+            <p> Select a city to check: </p>
+            
+            Canadian cities:
+            <form action ="processcity.py">
+                <select class = "city1">
+                    <option value ="montreal"> Montreal </option>
+                    <option value ="vancouver"> Vancouver </option>
+                    <option value ="toronto"> Toronto </option>
+                    <option value ="hamilton"> Hamilton </option>
+                    <option value ="ottawa"> Ottawa </option>
+                </select>
+                <input type ="submit">
+            </form>
+            <br>
+            
+            Chinese cities:
+            <form action ="processcity.py">
+                <select class = "city2">
+                    <option value ="beijing"> Beijing </option>
+                    <option value ="shanghai"> Shang Hai </option>
+                    <option value ="shenyang"> Shen Yang</option>
+                    <option value ="chengdu"> Cheng Du </option>
+                </select>
+                <input type ="submit">
+            </form>
+        </div>
+        
+        
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+        var mapProp;
+        $('.city1').change(function() {
+        	if( $(".city1 option:selected").text() == "montreal"){
+              mapProp= {
+                center:new google.maps.LatLng(45.50,-73.5673),
+                zoom:9,
+                minZoom: 1
+          		};
+          }
+          else if( $(".city1 option:selected").text() == "toronto"){
+            mapProp= {
+            center:new google.maps.LatLng(43.6532, -79.3832),
+            zoom:9,
+            minZoom: 1
+        	};
+          }
+          else if( $(".city1 option:selected").text() == "ottawa"){
+            mapProp= {
+            center:new google.maps.LatLng(45.4215, -75.6972),
+            zoom:9,
+            minZoom: 1
+        	};
+          }
+          else if( $(".city1 option:selected").text() == "vancouver"){
+            mapProp= {
+            center:new google.maps.LatLng(49.2827, -123.1207),
+            zoom:9,
+            minZoom: 1
+        	};
+          }
+          else if( $(".city1 option:selected").text() == "hamilton"){
+            mapProp= {
+            center:new google.maps.LatLng(43.2557, -79.8711),
+            zoom:9,
+            minZoom: 1
+        	};
+          }
+          else{
+          	mapProp= {
+            center:new google.maps.LatLng(0, 0),
+            zoom:1.5,
+            minZoom: 1
+        	};
+          }
+          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        });
+        
+        $('.city2').change(function() {
+          if( $(".city2 option:selected").text() == "beijing"){
+            mapProp= {
+            center:new google.maps.LatLng(39.9042, 116.4074),
+            zoom:7,
+            minZoom: 1
+        	};
+          }
+          else if( $(".city2 option:selected").text() == "shanghai"){
+            mapProp= {
+            center:new google.maps.LatLng(31.3204, 121.4737),
+            zoom:7,
+            minZoom: 1
+        	};
+          }
+          else if( $(".city2 option:selected").text() == "chengdu"){
+            mapProp= {
+            center:new google.maps.LatLng(30.5728, 104.0668),
+            zoom:6,
+            minZoom: 1
+        	};
+          }
+          else if( $(".city2 option:selected").text() == "shenyang"){
+            mapProp= {
+            center:new google.maps.LatLng(41.8057, 123.4315),
+            zoom:6,
+            minZoom: 1
+        	};
+          }
+          else{
+          	mapProp= {
+            center:new google.maps.LatLng(0, 0),
+            zoom:1.5,
+            minZoom: 1
+        	};
+          }
+          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        });
+        </script>
+    </body>
+</html>
