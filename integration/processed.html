@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <head>
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdhezvqfH17g-q0XrX6MCYI5Mv3_sV82U"></script>
+        <style>
+            
+        .googleMap{
+            width: 70%;
+            height: 500px;
+        }
+            
+        body{
+            background-image: url("https://images7.alphacoders.com/713/713678.jpg");
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100vw 100vw;
+            margin: 0;
+        }
+        
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            margin: 0;
+        }
+        
+        li{
+            float: left;
+            padding: 40px;
+            color: white;
+        }
+        
+        li a{
+            color:white;
+            font-family: 'Lora', serif;
+            font-size: 25px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        text{
+            color:white;
+            font-family: 'Lora', serif;
+            font-size: 15px;
+        }
+        
+        li:hover {
+            background-color: #267492;
+        }
+        
+        .description{
+            margin: auto;
+            width: 600px;
+            text-align: center;
+            font-size: 20px;
+            font-family:'Permanent Marker', cursive;
+            color: white;
+        }
+        
+        .filter{
+            background-color: rgba(67, 90, 108, 0.6);
+            height: 100%;
+            margin:0;
+            padding: ;
+        }
+        </style>
+        <script>
+            function myMap(){
+                var mapProp = {
+                    center: new google.maps.LatLng(0,0)
+                    zoom: 1.4,
+                    minZoom: 1
+                };
+                
+                var map = new google.maps.Map(document.getElementById ("googleMap"), mapProp);
+            }
+        </script>
+        </head>
+        <ul>
+            <li> <a href="home.html">Home</a></li>
+            <li> <a href="aboutus.html">About us</a></li>
+            <li> <a href="select.html">Select City</a></li>
+            <li> <a href="contact.html">Contact Us</a></li>
+        </ul>
+    
+        <div class = "description"><text> City selected: {{city}} </text> </div>
+    </body>
+</html>
