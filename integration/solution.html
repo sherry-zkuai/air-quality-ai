@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Air Quality Forecaste</title>
+<title>Our Solution</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -116,28 +116,40 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="position:relative;margin-left:0;top:100px">
 
   <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
-    <h3><b><i class="fa fa-dashboard"></i>     About Us</b></h3>
-    <div class = "description" style="font-size:18px;margin-left:10%;margin-right:10%">
-        <p> We are a group of 3 female students participating in the Ai for
-        Social Good Lab at McGill(2018 edition). </p>
-        <p> This is a project we built to help people become more aware of the changes in air quality in their surrounding environment. Some areas are more susceptible to bad air quality than others, and we hope that our project will help raise awareness about climate change and also help people in their daily lives. </p>
-        <p>The Team: </p>
-        <img src="image/IMG_0090.JPG" style="width:15%">
-        <p> Zirui (Sherry) Kuai: Undergraduate in Software Engineering at McGill University</p>
-        <li><a href="https://www.linkedin.com/in/zirui-kuai/">LinkedIn</a></li>
-        <li><a href="mailto:zirui.kuai@mail.mcgill.ca">zirui.kuai@mail.mcgill.ca</a></li>
-        <img src="image/2.png" style="width:15%">
-        <p> Yanjia Li: Undergraduate in Mathematics and Computer Science at McGill University</p>
-        <img src="image/3.png" style="width:15%">
-        <p> Yue Yang: Undergraduate in Computer Science at McGill University</p>
-        </br>
-    </div>
+  <header class="w3-container" style="padding-top:22px;">
+    <h3><b><i class="fa fa-dashboard"></i>    Use Machine Learning to Predict</b></h3>
   </header>
-  <!-- End page content -->
+
+  <div class="content" style="margin-left:10%;margin-right:10%;padding-bottom:100px">
+    <h4 style="font-weight:bold">
+        A Machine Leaning Model
+    </h4>
+    <p style="font-size:18px">
+        Nothing is more exited than using the next-generation technology and integrating it into real-life solutions. In order to train the model, we collected data from government websites. The model we used is a LSTM model, with the input being a sequence of 30 hour air quality data and the output being the 31st hour prediction.
+    </p>
+    <img src="https://cdn-images-1.medium.com/max/525/1*epcf2SBjRHBynBNFf-CpQA.png" style="margin-left:23%">
+    <br>
+    <p style="text-align:center;font-style:italic">A LSTM network</p>
+    <p style="font-size:18px">
+        Once we have the most up-to-date 30 hour data, we predict the next 24 hours data by putting the prediction back to the input. The following is a graph of real values versus predited values. (Green: real values; Orange: prediction)
+    </p>
+    <img src="image/1.png" style="width:60%;margin-left:20%;margin-right:auto">
+    <br>
+    <br>
+    <h4 style="font-weight:bold">
+            What's Next
+        </h4>
+        <p style="font-size:18px">
+            <li style="font-size:18px">For now, we are using data collected and organized by governments. In the future, we would like to cooperate with local governments and research institutes in more cities to set up measuring devices and gather data in real time.</li>
+            <li style="font-size:18px">Develop mobile Apps for smart phones and smart watches, so that users can easily access to the forecaste.</li>
+            <li style="font-size:18px">Develop APIs for Smart Home devices, such as Google Home, Amazon Echo, Nest Learning Thermostates, etc..</li>
+        </p>
+  </div>
+
 </div>
 
 
 
 </body>
 </html>
+
