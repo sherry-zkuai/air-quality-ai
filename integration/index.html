@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<title>AirLife</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <style>
+            .parent {
+                position: relative;
+                top: 0;
+                left: 0;
+              }
+              .child1 {
+                position: relative;
+                top: 0;
+                left: 0;
+              }
+              .child2 {
+                position: absolute;
+                top: 30px;
+                left: 70px;
+              }
+            .searchbar {
+                position: absolute;
+                display:block;
+                top: 50%;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                padding: 10px;
+                font-size: 20px;
+                color:whitesmoke;
+                text-shadow: 2px 2px 0 rgb(44, 70, 92);
+                font-weight: normal;
+            }
+
+            .title{
+                position: absolute;
+                top: 30%;
+                text-align: center;
+                margin-left: auto;
+                margin-right:auto;
+                width: 100%;
+                padding: 20px;
+                font-size:40px;
+                color: #fff; 
+                font-family: 'Helvetica Neue', sans-serif; 
+                font-size: 65px; 
+                font-weight: bold; 
+                letter-spacing: -1px;
+                line-height: 1;
+                text-transform: uppercase; 
+                text-shadow: 5px 5px 0  rgb(44, 70, 92);
+            }
+            .w3-topbar.w3-border-amber{
+                padding:0;
+                margin:0;
+            }
+            .w3-topbar.w3-border-amber:hover{
+                color:royalblue;
+            }
+            .w3-topbar.w3-border-orange:hover{
+                color:royalblue;
+            }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+        var china = [
+            {display: "Beijing", value: "beijing" }, 
+            {display: "Shanghai", value: "shanghai" }, 
+            {display: "Chengdu", value: "chengdu" },
+            {display: "Shenyang", value: "shenyang" }];
+        var canada=[
+            {display: "Toronto", value: "toronto"},
+            {display: "Montreal", value: "montreal"},
+            {display: "Ottawa", value: "ottawa"},
+            {display: "Vancouver", value:"vancouver"},
+            {display: "Hamilton", value: "hamilton"}];
+
+        $("#country").change(function() {
+            var parent = $(this).val(); 
+            switch(parent){ 
+                case "china":
+                    list(china);
+                    break;
+                case "canada":
+                    list(canada);
+                    break;
+                default: //default child option is blank
+                    $("#city").html("");  
+                    break;
+                }
+        });
+        //function to populate child select box
+        function list(array_list)
+        {
+            $("#city").html(""); //reset child options {% endcomment %}
+            $(array_list).each(function (i) { //populate child options 
+                $("#city").append("<option value="+array_list[i].value+">"+array_list[i].display+"</option>");
+            });
+        }
+    });
+    </script>
+</head>
+<body>
+
+<div class="w3-display-container" style="margin-bottom:50px">
+    <div class="parent">
+    <img class="child1" src="https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?cs=srgb&dl=clouds-cornfield-countryside-158827.jpg&fm=jpg" style="width:100%">
+    <img class="child2" src="image/9837241d-60ec-43c6-8d5b-59e67252314e.png">
+    <div class="title">Welcome to AirLife</div>
+    <div class="searchbar">
+                
+            Select a Country:
+            <select name="country" id="country">
+                <option value="">--Please Select a Country</option>
+                <option value="china">China</option>
+                <option value="canada">Canada</option>
+            </select>
+            <br>
+            
+            <form action="processcity.py">
+                Select a City:
+                <select name="city" id="city"></select>
+                <br>
+                <input type="submit">
+            </form>
+    </div>
+  <div class="w3-display-bottomleft w3-container w3-amber w3-hover-orange w3-hide-small"
+   style="bottom:10%;opacity:0.7;width:70%">
+  <h1><b>AirLife<br></b></h1>
+  <h2>Better Air Quality, for a Better Life</h2>
+    </div>
+</div>
+
+<div class="w3-row w3-container" style="margin:50px 0">
+<div class="w3-half w3-container">
+  <div class="w3-topbar w3-border-amber" onclick="window.location='importance.html';">
+    <img src="https://www.verdict.co.uk/wp-content/uploads/2018/02/uk-air-pollution-1440x960.jpg" style="position:relative;width:100%;height:50%;margin:0">
+    <h2>Why AirLife?</h2>
+    <p>Find out about how air quality can change your life.</p>
+  </div>
+</div>
+
+<div class="w3-half w3-container">
+  <div class="w3-topbar w3-border-amber" onclick="window.location='solution.html';">
+    <img src="http://lof.lawofattraction4u.org/wordpress/wp-content/uploads/2015/10/solution.jpg" style="position:relative;width:100%;right:0%">
+    <h2>Our Solution</h2>
+    <p>See the Machine Learning Model and What's Next</p>
+  </div>
+</div>
+</div>
+
+<div class="w3-row w3-container" style="margin:50px 0">
+<div class="w3-half w3-container">
+  <div class="w3-topbar w3-border-orange" onclick="window.location='aboutus.html';">
+    <div style="height:350px"><img src="image/9837241d-60ec-43c6-8d5b-59e67252314e.png" style="width:70%;margin-left:15%;margin-top:13%"></div>
+    <h2>About Us</h2>
+    <p>Who we are and our insight</p>
+  </div>
+</div>
+
+<div class="w3-half w3-container">
+  <div class="w3-topbar w3-border-orange" onclick="window.location='contact.html';">
+    <img src="https://www.coca-colaindia.com/content/dam/journey/in/en/private/faqs/contact-us2.jpg" style="width:100%">
+    <h2>Contact Us</h2>
+    <p>If you are interested in the project, or you have any questions, please contact us!</p>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
